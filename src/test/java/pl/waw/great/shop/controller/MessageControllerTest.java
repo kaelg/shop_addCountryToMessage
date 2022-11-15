@@ -42,10 +42,11 @@ class MessageControllerTest {
     private static final String TEXT = "txt";
     private static final String CITY = "city";
     private static final String EMAIL = "email";
+    private static final String COUNTRY = "country";
 
     @BeforeEach
     void setUp() {
-        this.messageDto = new MessageDto(TITLE, TEXT, CITY, EMAIL);
+        this.messageDto = new MessageDto(TITLE, TEXT, CITY, EMAIL, COUNTRY);
     }
 
     @AfterEach

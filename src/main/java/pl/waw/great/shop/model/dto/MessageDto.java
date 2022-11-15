@@ -12,12 +12,15 @@ public class MessageDto {
     private String city;
     @NotBlank(message = "{emailNotBlank}")
     private String email;
+    @NotBlank(message = "{countryNotBlank}")
+    private String country;
 
-    public MessageDto(String title, String body, String city, String email) {
+    public MessageDto(String title, String body, String city, String email, String country) {
         this.title = title;
         this.body = body;
         this.city = city;
         this.email = email;
+        this.country = country;
     }
 
     public String getTitle() {
@@ -50,5 +53,13 @@ public class MessageDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

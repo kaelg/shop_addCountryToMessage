@@ -35,13 +35,14 @@ class MessageServiceTest {
     private static final String TEXT = "txt";
     private static final String CITY = "city";
     private static final String EMAIL = "email";
+    private static final String COUNTRY = "country";
     private Message message;
     private MessageDto messageDto;
 
     @BeforeEach
     void setUp() {
-        this.message = new Message(TITLE, TEXT, CITY, EMAIL);
-        this.messageDto = new MessageDto(TITLE, TEXT, CITY, EMAIL);
+        this.message = new Message();
+        this.messageDto = new MessageDto(TITLE, TEXT, CITY, EMAIL, COUNTRY);
     }
 
     @AfterEach
@@ -60,5 +61,6 @@ class MessageServiceTest {
         assertEquals(TEXT, messageDto.getBody());
         assertEquals(CITY, messageDto.getCity());
         assertEquals(EMAIL, messageDto.getEmail());
+        assertEquals(COUNTRY, messageDto.getCountry());
     }
 }

@@ -18,18 +18,20 @@ public class Message {
     private String body;
     private String city;
     private String email;
+    private String country;
     private LocalDateTime created;
     private LocalDateTime updated;
 
-    public Message() {
-    }
 
-    public Message(String title, String body, String city, String email) {
+    public Message() {
         this.title = title;
         this.body = body;
         this.city = city;
         this.email = email;
+        this.country = country;
     }
+
+
 
     public Long getId() {
         return id;
@@ -67,6 +69,11 @@ public class Message {
         this.email = email;
     }
 
+    public String getCountry() { return country; }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
     public LocalDateTime getCreated() {
         return created;
     }
@@ -91,11 +98,11 @@ public class Message {
             return false;
         Message message = (Message) o;
         return Objects.equals(title, message.title) && Objects.equals(body, message.body) && Objects.equals(city, message.city) && Objects.equals(
-                email, message.email);
+                email, message.email) && Objects.equals(country, message.country);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, body, city, email);
+        return Objects.hash(title, body, city, email, country);
     }
 }
